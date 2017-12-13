@@ -17,12 +17,24 @@ function renderResult(result) {
   console.log(result);
   return `
     <div>
-      <a href = 'https://www.youtube.com/watch?v=${result.id.videoId}' target = '_blank'>
-        <img class='js-thumbnail' src='${result.snippet.thumbnails.default.url}' 
-      </a>
-      </div>
+      <img class='js-thumbnail' src='${result.snippet.thumbnails.default.url}'>
+    </div>
   `;
 }
+
+$('.js-search-results').on('click', function() {
+  createModal();
+});
+
+function createModal() {
+  $('.modal-box').toggle()
+
+  console.log('openModal working');
+  
+}
+// function closeModal() {
+//   document.getElementById('myModal').style.display = "none";
+
 
 function displayYouTubeSearchData(data) {
   const results = data.items.map((item) => renderResult(item));
