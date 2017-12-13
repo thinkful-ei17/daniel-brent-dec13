@@ -5,7 +5,7 @@ const API_KEY = 'AIzaSyABXXeV8aMin40PRbJCkSHUgltqh5Ehj4c';
 function getDataFromApi(searchTerm, callback) {
   const data = {
     part: 'snippet',
-    resultsPerPage: 5,
+    maxResults: 10,
     order: 'viewCount',
     q: searchTerm,
     key: API_KEY
@@ -25,7 +25,7 @@ function renderResult(result) {
 }
 
 function displayYouTubeSearchData(data) {
-  const results = data.items.map((item, index) => renderResult(item));
+  const results = data.items.map((item) => renderResult(item));
   $('.js-search-results').html(results);
 }
 
