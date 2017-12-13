@@ -14,15 +14,15 @@ function getDataFromApi(searchTerm, callback) {
 }
 
 function renderResult(result) {
+  console.log(result);
   return `
     <div>
-      <img class="js-thumbnail" href="${result.item.url}" target="_blank">${result.items.title} />
+      <img class="js-thumbnail" src="${result.snippet.thumbnails.default.url}" target="_blank">
       </div>
   `;
 }
 
 function displayYouTubeSearchData(data) {
-  console.log('displayYouTubeSearchData ran!');
   const results = data.items.map((item, index) => renderResult(item));
   $('.js-search-results').html(results);
 }
