@@ -17,7 +17,9 @@ function renderResult(result) {
   console.log(result);
   return `
     <div>
-      <img class="js-thumbnail" src="${result.snippet.thumbnails.default.url}" target="_blank">
+      <a href = 'https://www.youtube.com/watch?v=${result.id.videoId}' target = '_blank'>
+        <img class='js-thumbnail' src='${result.snippet.thumbnails.default.url}' 
+      </a>
       </div>
   `;
 }
